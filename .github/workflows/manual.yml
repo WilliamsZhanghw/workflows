@@ -1,0 +1,37 @@
+name: Manual Test Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_case:
+        description: 'Select test case to run'
+        required: true
+        default: 'all'
+        options:
+          - all
+          - case_5_6
+          
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Specify your Python version here
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          if [ "${{ github.event.inputs.run_case }}" == "all" ]; then
+            python -m unittest test_finance.FinanceTest.test_full
+          elif [ "${{ github.event.inputs.run_case }}" == "case_5_6" ]; then
+            python -m unittest test_finance.FinanceTest.test_case_5 test_finance.FinanceTest.test_case_6
+          fi
