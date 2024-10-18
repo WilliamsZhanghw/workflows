@@ -2,12 +2,27 @@ import unittest
 import time
 from selenium import webdriver
 from tests.page_objects.finance_page import FinancePage
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+
+
 
 class FinanceTest(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Chrome()  
+        # self.driver = webdriver.Chrome()  
+        # self.finance_page = FinancePage(self.driver)
+        # self.test_data = ["NFLX", "MSFT", "TSLA"]
+
+        # Configure Chrome options
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  # Run in headless mode
+        chrome_options.add_argument("--no-sandbox")  # Required for CI
+        chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+
+        self.driver = webdriver.Chrome(service=Service(), options=chrome_options)  
         self.finance_page = FinancePage(self.driver)
         self.test_data = ["NFLX", "MSFT", "TSLA"]
+
 
     def tearDown(self):
         self.driver.quit()
