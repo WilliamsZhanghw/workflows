@@ -6,7 +6,7 @@ This project is an automated testing framework using Python and Selenium, design
 
 ## Project Structure
 
-├── .github/ │ └── workflows/ │ ├── manual.yml │ └── nightly.yml   
+├── .github/ │ └── workflows/ │ ├── manual.yml │ └── nightly.yml  │ └── ci.yml   
 ├── requirements.txt    
 └── tests/ ├── page_objects/ │ └── finance_page.py └── test_finance.py   
 
@@ -21,7 +21,7 @@ This project is an automated testing framework using Python and Selenium, design
 - ChromeDriver (automatically handled in CI)
 
 ## Run
-The project is set up with GitHub Actions for continuous integration. The tests will run automatically on every push and pull request to the main branch.
+The project is set up with GitHub Actions for CI(continuous integration). The tests will run automatically on every push and pull request to the main branch.
 #### Using Action
 Manual Workflow: Allows you to trigger a run of all tests or specific test cases (case 5 and case 6).
 - all:
