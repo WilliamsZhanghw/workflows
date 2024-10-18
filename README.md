@@ -20,17 +20,9 @@ This project is an automated testing framework using Python and Selenium, design
 - Google Chrome
 - ChromeDriver (automatically handled in CI)
 
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
-   pip install -r requirements.txt
-   ```
+## Run
 The project is set up with GitHub Actions for continuous integration. The tests will run automatically on every push and pull request to the main branch.
-
+### Using Action
 Manual Workflow: Allows you to trigger a run of all tests or specific test cases (case 5 and case 6).
 all:
 Run all the test cases
@@ -38,7 +30,7 @@ case_5_6:
 Run test case 5 and 6
 Nightly Workflow: Runs nightly at midnight (UTC)
 
-Local Run:
+### Local Run
 Run all test cases:
 python -m unittest tests.test_finance.FinanceTest.test_full
 Run test case 5 and 6:
