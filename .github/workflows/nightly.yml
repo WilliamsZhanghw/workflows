@@ -1,0 +1,25 @@
+name: Nightly Test Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs nightly at midnight (UTC)
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Specify your Python version here
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run all tests
+        run: |
+          python -m unittest test_finance.FinanceTest.test_full
