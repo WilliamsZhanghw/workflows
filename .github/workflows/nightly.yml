@@ -2,7 +2,7 @@ name: Nightly Test Workflow
 
 on:
   schedule:
-    - cron: '30 11 * * *'  # Runs nightly at midnight (UTC)
+    - cron: '35 11 * * *'  # Runs nightly at midnight (UTC)
 
 jobs:
   run_tests:
