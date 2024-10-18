@@ -1,7 +1,7 @@
 import unittest
 import time
 from selenium import webdriver
-from page_objects.finance_page import FinancePage
+from tests.page_objects.finance_page import FinancePage
 
 class FinanceTest(unittest.TestCase):
     def setUp(self):
