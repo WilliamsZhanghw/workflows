@@ -6,9 +6,9 @@ This project is an automated testing framework using Python and Selenium, design
 
 ## Project Structure
 
-├── .github/ │ └── workflows/ │ ├── manual.yml │ └── nightly.yml 
-├── requirements.txt 
-└── tests/ ├── page_objects/ │ └── finance_page.py └── test_finance.py
+├── .github/ │ └── workflows/ │ ├── manual.yml │ └── nightly.yml   
+├── requirements.txt    
+└── tests/ ├── page_objects/ │ └── finance_page.py └── test_finance.py   
 
 - **.github/**: Contains GitHub Actions workflows for CI/CD.
 - **requirements.txt**: Lists the required Python packages for this project.
